@@ -1,0 +1,8 @@
+﻿Thầy Thắng:kiểm tra show code và viết lại code(cho ngồi viết tầm 15-20p):
+- tạo bảng mới, nhập thêm 3 bản ghi (bằng code hoặc tạo trên sql)
+- hiển thị trên trang admin
+- tạo các action thêm sửa xóa chi tiết
+- phân quyền chỉ cho người đã đăng nhập vào đc trang đó
+
+Các thầy khác:
+- giỏ hàng, phân trang,điều hướng trang, nói chung là code cần nghiên cứu kĩ
