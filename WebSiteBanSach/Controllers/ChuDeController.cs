@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,8 +19,10 @@ namespace WebSiteBanSach.Controllers
             return PartialView(db.ChuDes.Take(5).ToList());
         }
         //Sách theo chủ đề
-        public ViewResult SachTheoChuDe(int MaChuDe=0)
-        { 
+        public ViewResult SachTheoChuDe(int? page,int MaChuDe=0)
+        {
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
             //Kiểm tra chủ đề tồn tại hay không
             ChuDe cd = db.ChuDes.SingleOrDefault(n => n.MaChuDe == MaChuDe);
             if(cd==null)
@@ -34,11 +37,13 @@ namespace WebSiteBanSach.Controllers
                 ViewBag.Sach="Không có sách nào thuộc chủ đề này";
             }
             //Gán danh sách chủ để
+            ViewBag.MaChuDe = MaChuDe;
             ViewBag.lstChuDe = db.ChuDes.ToList();
-            return View(lstSach);
+            return View(lstSach.ToPagedList(pageNumber,pageSize));
         }
         //Hiển thị các chủ đề và sách theo chủ đề đầu tiên
-        public ViewResult DanhMucChuDe()
+        public ViewResult DanhMucChuDe(int? page)
+  
         {
             //Lấy ra chủ đề đầu tiên trong csdl
             int MaChuDe = int.Parse(db.ChuDes.ToList().ElementAt(0).MaChuDe.ToString());
