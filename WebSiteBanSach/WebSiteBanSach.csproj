@@ -1845,6 +1845,7 @@
     <Content Include="Views\QuanLySanPham\Xoa.cshtml" />
     <Content Include="Views\TimKiem\KetQuaTimKiem.cshtml" />
     <Content Include="Views\Layout\AdminLayout2.cshtml" />
+    <Content Include="Views\Layout\Layout_KhongChuDe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -4,7 +4,7 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Layout/AdminLayout2.cshtml";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
 }
 
 @*<h2>Index</h2>
@@ -20,10 +20,10 @@
             <div class="card">
                 <div class="card-header">
 
-                    <strong class="card-title">DANH MỤC SẢN PHẨM</strong>
+                    <strong class="card-title" style="margin-left:20px; font-size:30px; color:aqua;">DANH MỤC SẢN PHẨM</strong>
 
                     <?var url = getUrl();?><a href="@Url.Action("ThemMoi", "QuanLySanPham")">
-                        <button type='submit' name='test' class="btn btn-primary btn-sm" value='Thêm' style="float:right"> <i class="fa fa-dot-circle-o"> Thêm </i> </button>
+                        <button type='submit' name='test' class="btn btn-primary btn-sm" value='Thêm' style="float:right; border-color:red;"> <i class="fa fa-dot-circle-o"> Thêm </i> </button>
                     </a>
 
                 </div>
