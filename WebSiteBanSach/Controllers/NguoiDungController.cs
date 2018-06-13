@@ -51,7 +51,7 @@ namespace WebSiteBanSach.Controllers
             {
                 ViewBag.ThongBao = "Chúc mừng bạn đăng nhập thành công !";
                 Session["TaiKhoan"] = kh;
-                return View();
+                return RedirectToAction("Index","QuanLySanPham");
             }
             ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng!";
             return View();
