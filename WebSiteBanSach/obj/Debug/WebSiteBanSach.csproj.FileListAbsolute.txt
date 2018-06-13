@@ -6,3 +6,11 @@ D:\GitHub\Web_Test\WebSiteBanSach\obj\Debug\WebSiteBanSach.csproj.CoreCompileInp
 D:\GitHub\Web_Test\WebSiteBanSach\obj\Debug\WebSiteBanSach.dll
 D:\GitHub\Web_Test\WebSiteBanSach\obj\Debug\WebSiteBanSach.pdb
 D:\GitHub\Web_Test\WebSiteBanSach\obj\Debug\WebSiteBanSach.csprojResolveAssemblyReference.cache
+F:\GitHub\CNWeb_BanSach\WebSiteBanSach\bin\WebSiteBanSach.dll.config
+F:\GitHub\CNWeb_BanSach\WebSiteBanSach\bin\WebSiteBanSach.dll
+F:\GitHub\CNWeb_BanSach\WebSiteBanSach\bin\WebSiteBanSach.pdb
+F:\GitHub\CNWeb_BanSach\WebSiteBanSach\bin\Newtonsoft.Json.dll
+F:\GitHub\CNWeb_BanSach\WebSiteBanSach\obj\Debug\WebSiteBanSach.csprojResolveAssemblyReference.cache
+F:\GitHub\CNWeb_BanSach\WebSiteBanSach\obj\Debug\WebSiteBanSach.csproj.CoreCompileInputs.cache
+F:\GitHub\CNWeb_BanSach\WebSiteBanSach\obj\Debug\WebSiteBanSach.dll
+F:\GitHub\CNWeb_BanSach\WebSiteBanSach\obj\Debug\WebSiteBanSach.pdb
