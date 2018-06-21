@@ -1,0 +1,118 @@
+﻿@model PagedList.PagedList<WebSiteBanSach.Models.TacGia>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong class="card-title" style="margin-left:20px; font-size:30px; color:aqua;">TÁC GIẢ</strong>
+                    <div class="search-bar" style="float:right">
+                        @using (Html.BeginForm("Index", "TacGia", FormMethod.Get))
+                        {
+                            @Html.TextBox("SearchText", null, new { @placeholder = "Nhập Mã TG hoặc Tên TG nhé :3 !!!" })
+                            <input type="submit" value="Tìm Kiếm" class="search-button" style=" border-color:red; background-color:yellow ; margin-right:100px " />
+                            <a href="@Url.Action("ThemMoi","TacGia")" class="btn btn-default" style="float:right; border-color:red; background-color:cyan"> <i class="fa fa-dot-circle-o">Thêm Mới </i></a>
+                        }
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                Mã Tác Giả
+                            </th>
+                            <th>
+                                Tên Tác Giả
+                            </th>
+                            <th>
+                                Địa Chỉ
+                            </th>
+                            <th>
+                                Tiểu Sử
+                            </th>
+                            <th>
+                                Điện Thoại
+                            </th>
+
+
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaTacGia)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenTacGia)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DiaChi)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TieuSu)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DienThoai)
+                                </td>
+                                <td>
+                                    <a href=" @Url.Action("ChinhSua", "TacGia", new { @MaTacGia = item.MaTacGia })" name='test' class="btn btn-primary btn-sm" style="float:right; background-color:red; width:44px">  Sửa </a>
+                                    <a href="@Url.Action("HienThi", "TacGia", new { @MaTacGia = item.MaTacGia })" name='test' class="btn btn-primary btn-sm" style="float:right ; background-color:forestgreen; width:44px">  Chi Tiết </a>
+                                    <a href=" @Url.Action("Xoa", "TacGia", new { @MaTacGia = item.MaTacGia })" name='test' class="btn btn-primary btn-sm" value='Xoa' style="float:right; background-color:rebeccapurple; width:44px">  Xóa  </a>
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Tạo link liên kết các trang*@
+                    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/ @Model.PageCount
+                    <div class="MenuTrang">
+                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+                    </div>
+                    <style>
+
+                        .MenuTrang ul {
+                            list-style-type: none;
+                            margin: 0;
+                            padding: 0;
+                            overflow: hidden; /*background-color: #333;*/
+                        }
+
+                        .MenuTrang li {
+                            display: inline;
+                            float: left;
+                            border-right: 1px solid #bbb;
+                        }
+
+                            .MenuTrang li:last-child {
+                                border-right: none;
+                            }
+
+                            .MenuTrang li a {
+                                display: block;
+                                color: Black;
+                                text-align: center;
+                                padding: 14px 16px;
+                                text-decoration: none;
+                            }
+
+                                .MenuTrang li a:hover:not(.MenuTrang) {
+                                    background-color: #4CAF50;
+                                }
+
+                        .MenuTrang {
+                            background-color: cornflowerblue;
+                        }
+                    </style>

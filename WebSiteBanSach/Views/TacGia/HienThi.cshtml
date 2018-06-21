@@ -1,0 +1,62 @@
+﻿@model WebSiteBanSach.Models.TacGia
+
+@{
+    ViewBag.Title = "HienThi";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+
+
+<div>
+    <strong class="card-title" style="margin-left:20px; font-size:30px; color:aqua;">HIỂN THỊ SÁCH</strong>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaTacGia)
+        </dt>
+
+        <dd>
+            <span style="font-size:15pt;margin-left:5px;color:blue">@Model.MaTacGia</span>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenTacGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenTacGia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TieuSu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TieuSu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DienThoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DienThoai)
+        </dd>
+
+    </dl>
+</div>
+<div class="form-actions no-color" style="margin-top:1px">
+    <div class="col-md-offset-2 col-md-10">
+        <a href="@Url.Action("ChinhSua","TacGia", new { @MaTacGia=Model.MaTacGia })" class="btn btn-default" style="background-color:greenyellow ">Chỉnh Sửa</a> |
+        <a href="@Url.Action("Index","TacGia")" class="btn btn-default" style="background-color:plum ">Trở Về</a>
+
+    </div>
+</div>
