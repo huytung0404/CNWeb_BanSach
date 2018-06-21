@@ -21,8 +21,9 @@ namespace WebSiteBanSach.Controllers
         public ActionResult DangXuat()
         {
             FormsAuthentication.SignOut();
+            
             Session["UserName"] = null; // it will clear the session at the end of request
-            return RedirectToAction("Index", "Home");
+            return Redirect("/");
         }
 
         [HttpGet]

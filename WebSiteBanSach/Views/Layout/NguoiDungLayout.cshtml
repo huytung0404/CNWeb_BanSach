@@ -53,15 +53,17 @@
                         @if (Session["Username"] != null)
                         {
 
-                            <text> <strong>Xin Chào @Session["UserName"]</strong> </text>
+                            <text> <button style="background-color:cyan; font-weight:bold">Xin Chào @Session["UserName"]</button> </text>
                             @*@:[ @Html.ActionLink("Đăng Xuất",null, htmlAttributes: new { @class = "DangXuat"  }) ]*@
+                            @:@Html.ActionLink("Đăng Xuất", "DangXuat", "NguoiDung",null, new { @class = "button", @style ="background-color:red; font-weight:bold "})
+                                   
 
                         }
                         else
                         {
-                            @:[ @Html.ActionLink("Đăng ký", "DangKy", "NguoiDung", null, htmlAttributes: new { @class = "DangKy" }) ]
-                            @:[  @Html.ActionLink("Đăng nhập", "DangNhap", "NguoiDung", null, htmlAttributes: new { @class = "DangNhap" })]
-                        }
+                            @: @Html.ActionLink("Đăng Ký", "DangKy", "NguoiDung", null, htmlAttributes: new { @class = "button", @style = "background-color:cyan; font-weight:bold" }) 
+                            @:  @Html.ActionLink("Đăng Nhập", "DangNhap", "NguoiDung", null, htmlAttributes: new { @class = "button", @style = "background-color:green; font-weight:bold" })
+            }
                         <br />
                     </div>
                     <div style="border-top:.1px solid gray;margin-top:10px;padding-top:5px">
