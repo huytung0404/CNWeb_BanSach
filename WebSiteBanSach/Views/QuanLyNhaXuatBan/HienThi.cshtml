@@ -1,0 +1,54 @@
+﻿@model WebSiteBanSach.Models.NhaXuatBan
+
+@{
+    ViewBag.Title = "HienThi";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+
+
+<div>
+    <strong class="card-title" style="margin-left:20px; font-size:30px; color:aqua;">HIỂN THỊ NXB</strong>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model =>model.MaNXB)
+        </dt>
+
+        <dd>
+            <span style="font-size:15pt;margin-left:5px;color:blue">@Model.MaNXB</span>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenNXB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNXB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DienThoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DienThoai)
+        </dd>
+
+    </dl>
+</div>
+<div class="form-actions no-color" style="margin-top:1px">
+    <div class="col-md-offset-2 col-md-10">
+        <a href="@Url.Action("ChinhSua","QuanLyNhaXuatBan", new { @MaNXB=Model.MaNXB })" class="btn btn-default" style="background-color:greenyellow ">Chỉnh Sửa</a> |
+        <a href="@Url.Action("Index","QuanLyNhaXuatBan")" class="btn btn-default" style="background-color:plum ">Trở Về</a>
+
+    </div>
+</div>
