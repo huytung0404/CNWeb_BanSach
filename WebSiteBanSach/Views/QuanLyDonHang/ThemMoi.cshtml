@@ -1,0 +1,85 @@
+﻿@model WebSiteBanSach.Models.DonHang
+
+@{
+    ViewBag.Title = "ThemMoi";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <strong class="card-title" style="margin-left:20px; font-size:30px; color:aqua;">THÊM MỚI ĐƠN HÀNG</strong>
+    <hr />
+    @Html.ValidationSummary(true)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MaDonHang, htmlAttributes: new { @class = "control-label col-md-2", @style = "font-weight:bold; margin-right: 20px" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MaDonHang)
+            @Html.ValidationMessageFor(model => model.MaDonHang)
+        </div>
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NgayGiao, htmlAttributes: new { @class = "control-label col-md-2", @style = "font-weight:bold; margin-right: 20px" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NgayGiao)
+            @Html.ValidationMessageFor(model => model.NgayGiao)
+        </div>
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NgayDat, htmlAttributes: new { @class = "control-label col-md-2", @style = "font-weight:bold; margin-right: 20px" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NgayDat)
+            @Html.ValidationMessageFor(model => model.NgayDat)
+        </div>
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DaThanhToan, htmlAttributes: new { @class = "control-label col-md-2", @style = "font-weight:bold; margin-right: 20px" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DaThanhToan)
+            @Html.ValidationMessageFor(model => model.DaThanhToan)
+        </div>
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TinhTrangGiaoHang, htmlAttributes: new { @class = "control-label col-md-2", @style = "font-weight:bold; margin-right: 20px" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TinhTrangGiaoHang)
+            @Html.ValidationMessageFor(model => model.TinhTrangGiaoHang)
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(model => model.MaKH, htmlAttributes: new { @class = "control-label col-md-2", @style = "font-weight:bold; margin-right: 20px" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MaKH)
+            @Html.ValidationMessageFor(model => model.MaKH)
+        </div>
+    </div>
+    <br />
+
+    <div class="form-actions no-color" style="margin-top:2px">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Thêm mới" class="btn btn-default" style="background-color:cyan" /> |
+
+
+            <a href="@Url.Action("Index","QuanLyDonHang")" class="btn btn-default" style="background-color:plum ">Quay Lại</a>
+
+        </div>
+    </div>
+
+</div>
+}
+
+
