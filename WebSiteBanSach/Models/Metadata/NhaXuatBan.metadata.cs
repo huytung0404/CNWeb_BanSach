@@ -7,7 +7,7 @@ using System.ComponentModel;
 namespace WebSiteBanSach.Models.Metadata
 {
     [MetadataTypeAttribute(typeof(NhaXuatBanMetadata))]
-    public partial class TacGia
+    public partial class NhaXuatBan
     {
         internal sealed class NhaXuatBanMetadata
         {
